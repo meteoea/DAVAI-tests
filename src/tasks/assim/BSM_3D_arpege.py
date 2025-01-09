@@ -11,7 +11,7 @@ from .screenings.screeningCNT0 import Screening as ScreeningCNT0
 from .screenings.screeningOOPS import Screening as ScreeningOOPS
 from .minims.minimCNT0 import Minim as MinimCNT0
 from .minims.minimOOPS import Minim as MinimOOPS
-
+from .opobs.Htlad import Htlad 
 
 def setup(t, **kw):
     return Driver(tag='drv', ticket=t, options=kw, nodes=[
@@ -27,6 +27,7 @@ def setup(t, **kw):
                     Family(tag='oops', ticket=t, nodes=[
                         ScreeningOOPS(tag='screeningOOPS', ticket=t, **kw),
                         MinimOOPS(tag='minimOOPS', ticket=t, **kw),
+                        Htlad(tag='test_adjoint', ticket=t, **kw),                                                                                
                         ], **kw),
                     ], **kw),
                 ], **kw),
